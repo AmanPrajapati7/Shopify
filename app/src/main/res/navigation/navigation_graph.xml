@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/Home">
+
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.example.fragmentapplication.ListFragment"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_Home_to_Detail"
+            app:destination="@id/Detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/Detail"
+        android:name="com.example.fragmentapplication.DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_Detail_to_checkoutFragment"
+            app:destination="@id/Checkout" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/Checkout"
+        android:name="com.example.fragmentapplication.CheckoutFragment"
+        tools:layout="@layout/fragment_checkout">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
